@@ -16,6 +16,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'wicked'
 gem 'jquery-rails'
 gem 'devise'
+gem 'omniauth'
 # gem 'redis', '~> 4.0'
 
 # Use ActiveStorage variant
