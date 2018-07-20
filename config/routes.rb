@@ -6,4 +6,13 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions',
   }
+
+  devise_scope :user do
+    unauthenticated do
+      as :user do
+        root 'devise/sessions#new'
+      end
+    end
+    root 'home#index'
+  end
 end
