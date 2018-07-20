@@ -28,3 +28,4 @@
 tags
 /test/*
 .env
+/config/database.yml
