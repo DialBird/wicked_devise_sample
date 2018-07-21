@@ -1,13 +1,14 @@
-.field
-  = f.label :password
-  - if @minimum_password_length
-    em
-      | (
-      = @minimum_password_length
-      |  characters minimum)
-  br
-  = f.password_field :password, autocomplete: "off"
-.field
-  = f.label :password_confirmation
-  br
-  = f.password_field :password_confirmation, autocomplete: "off"
+= form_for(resource, as: resource_name, url: confirmation_path(resource_name)) do |f|
+  = f.hidden_field :confirmation_token
+  = devise_error_messages!
+  .field
+    = f.label :password
+    br
+    = f.password_field :password, autocomplete: "off", autofocus: true, required: true
+  .field
+    = f.label :password_confirmation
+    br
+    = f.password_field :password_confirmation, autocomplete: "off", required: true
+  .actions
+    = f.submit "Sign up"
+= render "users/shared/links"

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
+    patch 'users/confirmation', to: 'users/confirmations#confirm'
+
     unauthenticated do
       as :user do
         root 'devise/sessions#new'
