@@ -1,0 +1,22 @@
+header.bg-light
+  nav.navbar.navbar-expand-md.navbar-light.container
+    a.navbar-brand[href="#"] WickedDeviseTest
+    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="Navber" aria-expanded="false"]
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      - if user_signed_in?
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            = link_to 'Home', '#', class: 'nav-link active'
+      .navbar-nav.ml-auto
+        - if user_signed_in?
+          .nav-item.dropdown
+            /= link_to '#', class: 'nav-link dropdown-toggle', data: { toggle: 'dropdown' }
+            /  = fa_icon 'cog'
+            = link_to '#', class: 'nav-link dropdown-toggle', data: { toggle: 'dropdown' }
+              = fa_icon 'user-circle 2x'
+            .dropdown-menu
+              = link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item'
+              = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'dropdown-item'
+        - else
+          = link_to 'sign up', new_registration_path(resource_name), class: 'btn btn-outline-success'
