@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_20_065857) do
+ActiveRecord::Schema.define(version: 2018_07_21_071854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 2018_07_20_065857) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "display_name", default: "", null: false, comment: "表示用の名前"
+    t.integer "sex_id", default: 0, null: false, comment: "性別（sex.yml参照）"
+    t.string "last_name", default: "", null: false, comment: "性"
+    t.string "first_name", default: "", null: false, comment: "名"
+    t.integer "usage_type_id", default: 0, null: false, comment: "主な用途（usage_type.yml参照）"
+    t.string "corp_name", default: "", null: false, comment: "会社名"
+    t.string "zip", default: "", null: false, comment: "郵便番号"
+    t.integer "prefecture_id", default: 0, null: false, comment: "都道府県（prefecture.yml参照）"
+    t.string "address_1", default: "", null: false, comment: "住所１（番地まで）"
+    t.string "address_2", default: "", null: false, comment: "住所２（建物名）"
+    t.string "phone", default: "", null: false, comment: "電話番号"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
