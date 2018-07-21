@@ -17,6 +17,10 @@ gem 'wicked'
 gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
+gem 'bootstrap'
+gem 'kaminari'
+gem 'font-awesome-rails'
+gem 'bootstrap-datepicker-rails'
 # gem 'redis', '~> 4.0'
 
 # Use ActiveStorage variant
