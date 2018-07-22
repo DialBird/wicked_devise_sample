@@ -9,6 +9,12 @@ class AfterSignupController < ApplicationController
 
   def update
     @user = current_user
+    case step
+    when :common
+      params[:user][:status_id] = 1
+    when :address
+      params[:user][:status_id] = 2
+    end
     @user.attributes = user_params
     render_wizard @user
   end
