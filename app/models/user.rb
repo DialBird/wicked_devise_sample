@@ -4,7 +4,7 @@ class User < ApplicationRecord
          :confirmable, :timeoutable, :omniauthable
 
   ATTRIBUTES = %i[
-    display_name sex_id last_name first_name usage_type_id corp_name
+    status_id display_name sex_id last_name first_name usage_type_id corp_name
     zip prefecture_id address_1 address_2 phone
   ].freeze
 
