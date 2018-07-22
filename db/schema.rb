@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_07_21_071854) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status_id", default: 0, null: false, comment: "アカウントステータス"
     t.string "display_name", default: "", null: false, comment: "表示用の名前"
     t.integer "sex_id", default: 0, null: false, comment: "性別（sex.yml参照）"
     t.string "last_name", default: "", null: false, comment: "性"

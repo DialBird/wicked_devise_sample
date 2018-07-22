@@ -1,5 +1,6 @@
 class AddColumnsToUsers < ActiveRecord::Migration[5.2]
   def change
+    add_column :users, :status_id,     :integer, null: false, default: 0,  comment: 'アカウントステータス'
     add_column :users, :display_name,  :string,  null: false, default: '', comment: '表示用の名前'
     add_column :users, :sex_id,        :integer, null: false, default: 0,  comment: '性別（sex.yml参照）'
     add_column :users, :last_name,     :string,  null: false, default: '', comment: '性'
