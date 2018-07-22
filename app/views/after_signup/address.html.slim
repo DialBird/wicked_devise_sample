@@ -1,0 +1,15 @@
+= form_with model: @user, url: wizard_path do |f|
+  .field
+    = f.label :zip
+    br
+    = f.text_field :zip, autofocus: true, required: true
+  .field
+    = f.label :address_1
+    br
+    = f.text_field :address_1, required: true
+  .field
+    = f.label :address_2
+    br
+    = f.text_field :address_2, required: true
+  .actions
+    = f.submit "Complete"

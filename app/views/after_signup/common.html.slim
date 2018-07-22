@@ -1,0 +1,11 @@
+= form_with model: @user, url: wizard_path do |f|
+  .field
+    = f.label :display_name
+    br
+    = f.text_field :display_name, autofocus: true, required: true
+  .field
+    = f.label :sex_id
+    br
+    = f.number_field :sex_id, autocomplete: "off", required: true
+  .actions
+    = f.submit "Next"
