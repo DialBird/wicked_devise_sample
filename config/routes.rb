@@ -17,4 +17,6 @@ Rails.application.routes.draw do
     end
     root 'home#index'
   end
+
+  resources :after_signup
 end
